@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import TournoiClash from "./pages/TournoiClash";
+import TournoiClash from "./pages/TournoiClashRoyale";
 import TournoiEchecs from "./pages/TournoiEchecs";
 import CourseAPied from "./pages/CourseAPied";
 import NotFound from "./pages/NotFound";

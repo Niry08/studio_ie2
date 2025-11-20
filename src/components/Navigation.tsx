@@ -15,7 +15,7 @@ const Navigation = () => {
             className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
             <Trophy className="w-6 h-6" />
-            EventsPro
+            Studio ie^2
           </NavLink>
 
           <button 
@@ -38,7 +38,7 @@ const Navigation = () => {
               className="text-foreground hover:text-primary transition-colors"
               activeClassName="text-primary font-semibold"
             >
-              Tournoi Clash
+              Tournoi Clash Royale
             </NavLink>
             <NavLink 
               to="/tournoi-echecs" 
@@ -73,7 +73,7 @@ const Navigation = () => {
               activeClassName="text-primary font-semibold"
               onClick={() => setIsOpen(false)}
             >
-              Tournoi Clash
+              Tournoi Clash Royale
             </NavLink>
             <NavLink 
               to="/tournoi-echecs" 

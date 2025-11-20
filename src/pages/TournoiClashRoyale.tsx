@@ -17,11 +17,10 @@ const TournoiClash = () => {
               E-sport
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
-              Tournoi Clash of Clans
+              Tournoi Clash of Royale
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Participez au plus grand tournoi Clash of Clans de l'année. 
-              Affrontez les meilleurs joueurs et remportez des prix exceptionnels !
+              Participez à un tournoi Clash Royale en interne au Ceff. Relevez le défi, affrontez les autres étudiants et devenez le maître incontesté !
             </p>
           </div>
 
@@ -43,7 +42,7 @@ const TournoiClash = () => {
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Lieu</p>
-                        <p className="text-muted-foreground">En ligne (Discord)</p>
+                        <p className="text-muted-foreground">Au Ceff Industrie</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -56,8 +55,8 @@ const TournoiClash = () => {
                     <div className="flex items-start gap-3">
                       <Award className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <p className="font-semibold">Prix</p>
-                        <p className="text-muted-foreground">1500€ de dotations + goodies</p>
+                        <p className="font-semibold">Frais inscription</p>
+                        <p className="text-muted-foreground">Gratuit</p>
                       </div>
                     </div>
                   </div>
