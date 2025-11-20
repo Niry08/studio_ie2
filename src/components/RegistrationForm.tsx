@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface RegistrationFormProps {
   eventName: string;
@@ -22,14 +23,32 @@ const RegistrationForm = ({ eventName }: RegistrationFormProps) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-registration', {
+        body: {
+          eventName,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+        },
+      });
+
+      if (error) throw error;
+
       toast.success("Inscription réussie !", {
         description: `Vous êtes inscrit(e) pour ${eventName}. Un email de confirmation vous sera envoyé.`,
       });
+      
       setFormData({ firstName: "", lastName: "", email: "", phone: "" });
+    } catch (error) {
+      console.error('Registration error:', error);
+      toast.error("Erreur lors de l'inscription", {
+        description: "Une erreur s'est produite. Veuillez réessayer.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
