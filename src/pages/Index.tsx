@@ -20,8 +20,7 @@ const Index = () => {
             Vivez des événements inoubliables
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            EventsPro organise des tournois et compétitions pour tous les passionnés. 
-            Rejoignez notre communauté et participez à des événements exceptionnels.
+            Dans le cadre de notre TPI, nous avons créer notre entriprise d'événementiel. Nous organisons différents événements tels qu'un tournoi Clash Royale, un tournoi d'échecs et une course à pied.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/tournoi-clash">
@@ -80,7 +79,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <EventCard
               title="Tournoi Clash"
-              description="Affrontez les meilleurs joueurs dans un tournoi épique de Clash of Clans"
+              description="Affrontez les meilleurs joueurs dans un tournoi épique de Clash of Royale"
               date="15 Janvier 2025"
               location="En ligne"
               participants="128 places disponibles"

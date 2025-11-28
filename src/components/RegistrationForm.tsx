@@ -113,7 +113,7 @@ const RegistrationForm = ({ eventName }: RegistrationFormProps) => {
               required
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+33 6 12 34 56 78"
+              placeholder="+41 78 123 45 67"
             />
           </div>
           <Button type="submit" className="w-full" disabled={isSubmitting}>

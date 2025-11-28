@@ -17,7 +17,7 @@ const TournoiClash = () => {
               E-sport
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
-              Tournoi Clash of Royale
+              Tournoi Clash Royale
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Participez à un tournoi Clash Royale en interne au Ceff. Relevez le défi, affrontez les autres étudiants et devenez le maître incontesté !
@@ -96,7 +96,7 @@ const TournoiClash = () => {
 
             {/* Registration Form */}
             <div>
-              <RegistrationForm eventName="le Tournoi Clash of Clans" />
+              <RegistrationForm eventName="le Tournoi Clash of Royale" />
             </div>
           </div>
         </div>
