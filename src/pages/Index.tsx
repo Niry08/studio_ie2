@@ -33,7 +33,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      {/* <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Notre expertise</h2>
@@ -65,7 +65,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Events Section */}
       <section className="py-20 px-4">
@@ -78,10 +78,10 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <EventCard
-              title="Tournoi Clash"
-              description="Affrontez les meilleurs joueurs dans un tournoi épique de Clash of Royale"
-              date="15 Janvier 2025"
-              location="En ligne"
+              title="Tournoi Clash Royale"
+              description="Affrontez les meilleurs joueurs dans un tournoi épique de Clash Royale du Ceff"
+              date="Vendredi avant les vacances de Pâques"
+              location="Ceff Industrie"
               participants="128 places disponibles"
               link="/tournoi-clash"
               icon={<Trophy className="w-6 h-6" />}
@@ -89,17 +89,17 @@ const Index = () => {
             <EventCard
               title="Tournoi d'Échecs"
               description="Démontrez votre stratégie dans notre championnat d'échecs"
-              date="22 Janvier 2025"
-              location="Centre culturel, Paris"
-              participants="64 places disponibles"
+              date="Mois de mai"
+              location="-"
+              participants="2x32 places disponibles"
               link="/tournoi-echecs"
               icon={<Target className="w-6 h-6" />}
             />
             <EventCard
               title="Course à Pied"
-              description="Course de 10km dans un cadre exceptionnel"
-              date="5 Février 2025"
-              location="Parc de la Ville"
+              description="Course de 6km dans un cadre exceptionnel"
+              date="09.05.2025"
+              location="Aegerten"
               participants="200 places disponibles"
               link="/course-a-pied"
               icon={<Award className="w-6 h-6" />}
@@ -111,7 +111,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-4 bg-muted/30 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>&copy; 2025 EventsPro. Tous droits réservés.</p>
+          <p>&copy; 2025 Studio-ie^2. Tous droits réservés.</p>
         </div>
       </footer>
     </div>

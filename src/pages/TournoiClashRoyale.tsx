@@ -35,7 +35,7 @@ const TournoiClash = () => {
                       <Calendar className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Date</p>
-                        <p className="text-muted-foreground">15 Janvier 2025, 14h00 - 20h00</p>
+                        <p className="text-muted-foreground">Vendredi avant les vacances de pâques</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -84,8 +84,6 @@ const TournoiClash = () => {
                     <div className="bg-muted/50 p-4 rounded-lg mt-4">
                       <p className="font-semibold text-foreground mb-2">Conditions de participation</p>
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Niveau HDV 13 minimum</li>
-                        <li>Compte actif depuis au moins 3 mois</li>
                         <li>Connexion Discord obligatoire</li>
                       </ul>
                     </div>

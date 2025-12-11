@@ -36,14 +36,14 @@ const TournoiEchecs = () => {
                       <Calendar className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Date</p>
-                        <p className="text-muted-foreground">22 Janvier 2025, 10h00 - 19h00</p>
+                        <p className="text-muted-foreground">Mois de mai</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Lieu</p>
-                        <p className="text-muted-foreground">Centre Culturel, 15 Rue de Paris, 75001 Paris</p>
+                        <p className="text-muted-foreground">-</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -57,7 +57,7 @@ const TournoiEchecs = () => {
                       <Award className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Prix</p>
-                        <p className="text-muted-foreground">2000€ de dotations + trophées</p>
+                        <p className="text-muted-foreground">Produits locaux</p>
                       </div>
                     </div>
                   </div>
@@ -71,24 +71,25 @@ const TournoiEchecs = () => {
                     <div className="flex items-start gap-3">
                       <Trophy className="w-5 h-5 text-secondary mt-1" />
                       <div>
-                        <p className="font-semibold text-foreground">Système Swiss</p>
-                        <p>7 rondes de 60 minutes par joueur</p>
+                        <p className="font-semibold text-foreground">Phase de pool</p>
+                        <p>BO1 - 10min</p>
+
+                        <p className="font-semibold text-foreground">Phase éliminative</p>
+                        <p>BO3 - 15min</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Target className="w-5 h-5 text-secondary mt-1" />
                       <div>
                         <p className="font-semibold text-foreground">Catégories</p>
-                        <p>Open, Jeunes (-18 ans), Vétérans (+60 ans)</p>
+                        <p>-1000 élos & +1000 élos</p>
                       </div>
                     </div>
                     <div className="bg-muted/50 p-4 rounded-lg mt-4">
                       <p className="font-semibold text-foreground mb-2">Informations pratiques</p>
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Cadence: 60 min + 30 sec/coup</li>
                         <li>Inscription sur place possible (sous réserve)</li>
-                        <li>Restauration et boissons sur place</li>
-                        <li>Parking gratuit disponible</li>
+                        <li>Restauration et boissons sur place - à voir</li>
                       </ul>
                     </div>
                   </div>

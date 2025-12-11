@@ -26,7 +26,7 @@ const EventCard = ({ title, description, date, location, participants, link, ico
         <CardDescription className="text-base">{description}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="space-y-2 text-sm text-muted-foreground">
+        <div className="space-y-2 mb-3 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4" />
             <span>{date}</span>

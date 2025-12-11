@@ -17,17 +17,15 @@ const CourseAPied = () => {
               Sport
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
-              Course à Pied 10km
+              Course à Pied 6km
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Participez à notre course de 10km dans un cadre exceptionnel. 
-              Que vous soyez débutant ou coureur confirmé, relevez le défi !
+              Participez à notre course de 6km dans le magnifique village d'aegerten. Cela se déroulera durant la fête de village.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-2 gap-8 mb-16">
             {/* Event Details */}
-            <div className="space-y-6">
               <Card className="shadow-card">
                 <CardContent className="pt-6">
                   <h2 className="text-2xl font-bold mb-6">Détails de l'événement</h2>
@@ -36,34 +34,33 @@ const CourseAPied = () => {
                       <Calendar className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Date</p>
-                        <p className="text-muted-foreground">5 Février 2025, 9h00 - 13h00</p>
+                        <p className="text-muted-foreground">9 mai 2025</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Lieu</p>
-                        <p className="text-muted-foreground">Départ: Parc de la Ville, Avenue du Sport</p>
+                        <p className="text-muted-foreground">Départ: Village d'Aegerten</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Users className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Participants</p>
-                        <p className="text-muted-foreground">200 places disponibles</p>
+                        <p className="text-muted-foreground">Environ 200 places disponibles</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Award className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Prix</p>
-                        <p className="text-muted-foreground">Médailles pour tous + prix pour les 3 premiers</p>
+                        <p className="text-muted-foreground">En cours</p>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-
               <Card className="shadow-card">
                 <CardContent className="pt-6">
                   <h2 className="text-2xl font-bold mb-6">Parcours et catégories</h2>
@@ -72,35 +69,26 @@ const CourseAPied = () => {
                       <Trophy className="w-5 h-5 text-secondary mt-1" />
                       <div>
                         <p className="font-semibold text-foreground">Parcours</p>
-                        <p>10km en boucle dans le parc, parcours homologué FFA</p>
+                        <p>6km de pur bonheur</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Target className="w-5 h-5 text-secondary mt-1" />
                       <div>
                         <p className="font-semibold text-foreground">Catégories</p>
-                        <p>Hommes, Femmes, Jeunes (16-18 ans), Vétérans (+50 ans)</p>
+                        <p>Tout le monde court dans la même catégorie</p>
                       </div>
                     </div>
                     <div className="bg-muted/50 p-4 rounded-lg mt-4">
                       <p className="font-semibold text-foreground mb-2">Informations pratiques</p>
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Certificat médical obligatoire</li>
-                        <li>Dossards à retirer 1h avant la course</li>
-                        <li>Ravitaillements tous les 2,5km</li>
-                        <li>Vestiaires et douches disponibles</li>
-                        <li>Remise des prix à 12h30</li>
+                        <li>Durant la fête de village</li>
+                        <li>Boissons disponibles</li>
                       </ul>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-            </div>
-
-            {/* Registration Form */}
-            <div>
-              <RegistrationForm eventName="la Course à Pied 10km" />
-            </div>
           </div>
         </div>
       </div>
