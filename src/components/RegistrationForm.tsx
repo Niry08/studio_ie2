@@ -8,15 +8,21 @@ import { supabase } from "@/integrations/supabase/client";
 
 interface RegistrationFormProps {
   eventName: string;
+  showClashRoyalFields?: boolean;
+  showChessFields?: boolean;
 }
 
-const RegistrationForm = ({ eventName }: RegistrationFormProps) => {
+const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFields = false }: RegistrationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
+    clashRoyalTag: "",
+    clashRoyalUsername: "",
+    eloOfficiel: "",
+    elo: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,6 +37,10 @@ const RegistrationForm = ({ eventName }: RegistrationFormProps) => {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
+          clashRoyalTag: formData.clashRoyalTag || null,
+          clashRoyalUsername: formData.clashRoyalUsername || null,
+          eloOfficiel: formData.eloOfficiel ? parseInt(formData.eloOfficiel) : null,
+          elo: formData.elo ? parseInt(formData.elo) : null,
         },
       });
 
@@ -40,7 +50,7 @@ const RegistrationForm = ({ eventName }: RegistrationFormProps) => {
         description: `Vous êtes inscrit(e) pour ${eventName}. Un email de confirmation vous sera envoyé.`,
       });
       
-      setFormData({ firstName: "", lastName: "", email: "", phone: "" });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", clashRoyalTag: "", clashRoyalUsername: "", eloOfficiel: "", elo: "" });
     } catch (error) {
       console.error('Registration error:', error);
       toast.error("Erreur lors de l'inscription", {
@@ -116,6 +126,61 @@ const RegistrationForm = ({ eventName }: RegistrationFormProps) => {
               placeholder="+41 78 123 45 67"
             />
           </div>
+
+          {showClashRoyalFields && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="clashRoyalTag">Tag Clash Royale</Label>
+                <Input
+                  id="clashRoyalTag"
+                  name="clashRoyalTag"
+                  type="text"
+                  value={formData.clashRoyalTag}
+                  onChange={handleChange}
+                  placeholder="#ABC123XYZ"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="clashRoyalUsername">Pseudo Clash Royale</Label>
+                <Input
+                  id="clashRoyalUsername"
+                  name="clashRoyalUsername"
+                  type="text"
+                  value={formData.clashRoyalUsername}
+                  onChange={handleChange}
+                  placeholder="Votre pseudo en jeu"
+                />
+              </div>
+            </>
+          )}
+
+          {showChessFields && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="eloOfficiel">Elo officiel (FIDE/FSE)</Label>
+                <Input
+                  id="eloOfficiel"
+                  name="eloOfficiel"
+                  type="number"
+                  value={formData.eloOfficiel}
+                  onChange={handleChange}
+                  placeholder="1500"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="elo">Elo estimé (Chess.com/Lichess)</Label>
+                <Input
+                  id="elo"
+                  name="elo"
+                  type="number"
+                  value={formData.elo}
+                  onChange={handleChange}
+                  placeholder="1200"
+                />
+              </div>
+            </>
+          )}
+
           <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? "Inscription en cours..." : "S'inscrire maintenant"}
           </Button>

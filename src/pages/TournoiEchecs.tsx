@@ -100,7 +100,7 @@ const TournoiEchecs = () => {
 
             {/* Registration Form */}
             <div>
-              <RegistrationForm eventName="le Championnat d'Échecs" />
+              <RegistrationForm eventName="le Championnat d'Échecs" showChessFields />
             </div>
           </div>
         </div>
