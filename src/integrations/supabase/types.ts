@@ -16,7 +16,11 @@ export type Database = {
     Tables: {
       registrations: {
         Row: {
+          clash_royal_tag: string | null
+          clash_royal_username: string | null
           created_at: string
+          elo: number | null
+          elo_officiel: number | null
           email: string
           event_name: string
           first_name: string
@@ -25,7 +29,11 @@ export type Database = {
           phone: string
         }
         Insert: {
+          clash_royal_tag?: string | null
+          clash_royal_username?: string | null
           created_at?: string
+          elo?: number | null
+          elo_officiel?: number | null
           email: string
           event_name: string
           first_name: string
@@ -34,7 +42,11 @@ export type Database = {
           phone: string
         }
         Update: {
+          clash_royal_tag?: string | null
+          clash_royal_username?: string | null
           created_at?: string
+          elo?: number | null
+          elo_officiel?: number | null
           email?: string
           event_name?: string
           first_name?: string
