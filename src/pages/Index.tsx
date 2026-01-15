@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
 import { Button } from "@/components/ui/button";
-import { Trophy, Target, Award } from "lucide-react";
+import { Trophy, Target, Award, Users, Goal, Crown, Skull } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -61,7 +61,7 @@ const Index = () => {
               location="Ceff Industrie"
               participants="128 places disponibles"
               link="/tournoi-clash"
-              icon={<Trophy className="w-6 h-6" />}
+              icon={<Skull className="w-6 h-6" />}
             />
             <EventCard
               title="Tournoi d'Échecs"
@@ -70,23 +70,23 @@ const Index = () => {
               location="-"
               participants="2x32 places disponibles"
               link="/tournoi-echecs"
-              icon={<Target className="w-6 h-6" />}
+              icon={<Crown className="w-6 h-6" />}
             />
             <EventCard
               title="Course à Pied"
-              description="Course de 6km dans un cadre exceptionnel"
+              description="Course à pied de 6km dans un cadre exceptionnel"
               date="09.05.2025"
               location="Aegerten"
-              participants="200 places disponibles"
+              participants="Pas de limites de places"
               link="/course-a-pied"
               icon={<Award className="w-6 h-6" />}
             />
-          </div>
+            </div>
         </div>
       </section>
 
       {/* About us */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-background">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">À propos de nous</h2>
@@ -99,7 +99,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row items-start gap-6 p-8 rounded-2xl bg-card border-l-4 border-primary shadow-sm">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                  <Trophy className="w-8 h-8 text-primary-foreground" />
+                  <Goal className="w-8 h-8 text-primary-foreground" />
                 </div>
               </div>
               <div className="flex-1">
@@ -127,7 +127,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row items-start gap-6 p-8 rounded-2xl bg-card border-l-4 border-primary shadow-sm">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                  <Award className="w-8 h-8 text-primary-foreground" />
+                  <Users className="w-8 h-8 text-primary-foreground" />
                 </div>
               </div>
               <div className="flex-1">
