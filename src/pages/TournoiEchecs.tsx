@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import RegistrationForm from "@/components/RegistrationForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Calendar, MapPin, Users, Award, Trophy } from "lucide-react";
@@ -8,7 +9,7 @@ const TournoiEchecs = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="pt-24 pb-20 px-4">
+      <div className="pt-24 px-4">
         <div className="container mx-auto max-w-6xl">
           {/* Hero */}
           <div className="text-center mb-16">
@@ -104,6 +105,8 @@ const TournoiEchecs = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

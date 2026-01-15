@@ -1,7 +1,6 @@
 import { NavLink } from "@/components/NavLink";
-import { Trophy, Users, Menu, X } from "lucide-react";
+import { Trophy, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +14,11 @@ const Navigation = () => {
             className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
             <Trophy className="w-6 h-6" />
-            Studio ie^2
+            Studio ie²
           </NavLink>
 
           <button 
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -28,69 +27,71 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-6">
             <NavLink 
               to="/" 
-              className="text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
+              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
             >
               Accueil
             </NavLink>
             <NavLink 
               to="/tournoi-clash" 
-              className="text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
+              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
             >
-              Tournoi Clash Royale
+              Clash Royale
             </NavLink>
             <NavLink 
               to="/tournoi-echecs" 
-              className="text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
+              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
             >
-              Tournoi Échecs
+              Échecs
             </NavLink>
             <NavLink 
               to="/course-a-pied" 
-              className="text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
+              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
             >
-              Course à Pied
+              Course
             </NavLink>
           </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden py-4 space-y-3">
-            <NavLink 
-              to="/" 
-              className="block text-foreground hover:text-primary transition-colors py-2"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Accueil
-            </NavLink>
-            <NavLink 
-              to="/tournoi-clash" 
-              className="block text-foreground hover:text-primary transition-colors py-2"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Tournoi Clash Royale
-            </NavLink>
-            <NavLink 
-              to="/tournoi-echecs" 
-              className="block text-foreground hover:text-primary transition-colors py-2"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Tournoi Échecs
-            </NavLink>
-            <NavLink 
-              to="/course-a-pied" 
-              className="block text-foreground hover:text-primary transition-colors py-2"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Course à Pied
-            </NavLink>
+          <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
+            <div className="px-4 py-4 space-y-2">
+              <NavLink 
+                to="/" 
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
+                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Accueil
+              </NavLink>
+              <NavLink 
+                to="/tournoi-clash" 
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
+                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Clash Royale
+              </NavLink>
+              <NavLink 
+                to="/tournoi-echecs" 
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
+                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Échecs
+              </NavLink>
+              <NavLink 
+                to="/course-a-pied" 
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
+                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Course
+              </NavLink>
+            </div>
           </div>
         )}
       </div>
