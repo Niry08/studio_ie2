@@ -111,7 +111,7 @@ const TournoiEchecs = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 items-center max-w-2xl mx-auto">
               {[
-                { name: "Club d'Échecs Court", logo: "/sponsors_images/echecs/club_echecs_court.png", url: "#" },
+                { name: "Club d'Échecs Court", logo: "/sponsors_images/echecs/club_echecs_court.png", url: "https://cecourt.ch" },
                 { name: "Croisitour", logo: "/sponsors_images/echecs/croisitour.png", url: "https://www.croisitour.ch" }
               ].map((sponsor) => (
                 <a
