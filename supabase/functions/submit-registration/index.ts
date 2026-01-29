@@ -12,6 +12,10 @@ interface RegistrationRequest {
   lastName: string;
   email: string;
   phone: string;
+  clashRoyalTag?: string;
+  clashRoyalUsername?: string;
+  eloOfficiel?: number;
+  elo?: number;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -26,9 +30,9 @@ const handler = async (req: Request): Promise<Response> => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    const { eventName, firstName, lastName, email, phone }: RegistrationRequest = await req.json();
+    const { eventName, firstName, lastName, email, phone, clashRoyalTag, clashRoyalUsername, eloOfficiel, elo }: RegistrationRequest = await req.json();
 
-    console.log('Processing registration:', { eventName, firstName, lastName, email });
+    console.log('Processing registration:', { eventName, firstName, lastName, email, clashRoyalTag, clashRoyalUsername, eloOfficiel, elo });
 
     // Validate required fields
     if (!eventName || !firstName || !lastName || !email || !phone) {
@@ -51,6 +55,10 @@ const handler = async (req: Request): Promise<Response> => {
         last_name: lastName,
         email: email,
         phone: phone,
+        clash_royal_tag: clashRoyalTag || null,
+        clash_royal_username: clashRoyalUsername || null,
+        elo_officiel: eloOfficiel || null,
+        elo: elo || null,
       })
       .select()
       .single();
