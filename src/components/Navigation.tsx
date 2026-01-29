@@ -51,7 +51,7 @@ const Navigation = () => {
               className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
               activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
             >
-              Course
+              Course à pied
             </NavLink>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Navigation = () => {
                 activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Course
+                Course à pied
               </NavLink>
             </div>
           </div>

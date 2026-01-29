@@ -74,7 +74,7 @@ const Footer: React.FC<FooterProps> = ({
 
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                 <div style={socialStyle} aria-label="Réseaux sociaux" role="navigation">
-                    <a href="https://www.instagram.com/studio_ie2" aria-label="Instagram" style={{ color: "inherit", display: "flex", alignItems: "center" }}>
+                    <a href="https://www.instagram.com/lakerun_biel/" target="_blank" aria-label="Instagram" style={{ color: "inherit", display: "flex", alignItems: "center" }}>
                         {socialIcons.instagram}
                     </a>
                     <a href="https://www.tiktok.com/@studio_ie2" aria-label="TikTok" style={{ color: "inherit", display: "flex", alignItems: "center" }}>
