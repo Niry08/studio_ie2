@@ -83,7 +83,7 @@ const TournoiEchecs = () => {
                       <Target className="w-5 h-5 text-secondary mt-1" />
                       <div>
                         <p className="font-semibold text-foreground">Catégories</p>
-                        <p>-1000 élos & +1000 élos</p>
+                        <p>top 16 & bottom 16</p>
                       </div>
                     </div>
                     <div className="bg-muted/50 p-4 rounded-lg mt-4">
