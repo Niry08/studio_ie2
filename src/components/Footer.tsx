@@ -1,90 +1,82 @@
 import React from "react";
+import { Instagram, Mail } from "lucide-react";
 
-type LinkItem = { label: string; href: string };
+const Footer: React.FC = () => {
+  const year = new Date().getFullYear();
 
-type FooterProps = {
-    company?: string;
-    links?: LinkItem[];
-    className?: string;
-};
-
-const socialIcons = {
-    instagram: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-                <path d="M3 11C3 7.22876 3 5.34315 4.17157 4.17157C5.34315 3 7.22876 3 11 3H13C16.7712 3 18.6569 3 19.8284 4.17157C21 5.34315 21 7.22876 21 11V13C21 16.7712 21 18.6569 19.8284 19.8284C18.6569 21 16.7712 21 13 21H11C7.22876 21 5.34315 21 4.17157 19.8284C3 18.6569 3 16.7712 3 13V11Z" stroke="#222222"></path>
-                <circle cx="16.5" cy="7.5" r="1.5" fill="#222222"></circle>
-                <circle cx="12" cy="12" r="3.5" stroke="#222222"></circle>
-            </g>
-        </svg>
-    ),
-    tiktok: (
-        <svg width="20" height="20" fill="#000000" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-                <title>tiktok</title>
-                <path d="M16.656 1.029c1.637-0.025 3.262-0.012 4.886-0.025 0.054 2.031 0.878 3.859 2.189 5.213l-0.002-0.002c1.411 1.271 3.247 2.095 5.271 2.235l0.028 0.002v5.036c-1.912-0.048-3.71-0.489-5.331-1.247l0.082 0.034c-0.784-0.377-1.447-0.764-2.077-1.196l0.052 0.034c-0.012 3.649 0.012 7.298-0.025 10.934-0.103 1.853-0.719 3.543-1.707 4.954l0.020-0.031c-1.652 2.366-4.328 3.919-7.371 4.011l-0.014 0c-0.123 0.006-0.268 0.009-0.414 0.009-1.73 0-3.347-0.482-4.725-1.319l0.040 0.023c-2.508-1.509-4.238-4.091-4.558-7.094l-0.004-0.041c-0.025-0.625-0.037-1.25-0.012-1.862 0.49-4.779 4.494-8.476 9.361-8.476 0.547 0 1.083 0.047 1.604 0.136l-0.056-0.008c0.025 1.849-0.050 3.699-0.050 5.548-0.423-0.153-0.911-0.242-1.42-0.242-1.868 0-3.457 1.194-4.045 2.861l-0.009 0.030c-0.133 0.427-0.21 0.918-0.21 1.426 0 0.206 0.013 0.41 0.037 0.61l-0.002-0.024c0.332 2.046 2.086 3.59 4.201 3.59 0.061 0 0.121-0.001 0.181-0.004l-0.009 0c1.463-0.044 2.733-0.831 3.451-1.994l0.010-0.018c0.267-0.372 0.45-0.822 0.511-1.311l0.001-0.014c0.125-2.237 0.075-4.461 0.087-6.698 0.012-5.036-0.012-10.060 0.025-15.083z"></path>
-            </g>
-        </svg>
-    ),
-};
-
-const Footer: React.FC<FooterProps> = ({
-    company = "Studio-ie²",
-    links = [
-        { label: "Accueil", href: "/" },
-        { label: "Contact", href: "mailto:contact@studio-ie2.ch" },
-    ],
-    className = "",
-}) => {
-    const year = new Date().getFullYear();
-
-    const containerStyle: React.CSSProperties = {
-        borderTop: "1px solid rgba(0,0,0,0.08)",
-        padding: "20px",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        alignItems: "center",
-        gap: "12px",
-        fontSize: "14px",
-        color: "#333",
-    };
-
-    const leftStyle: React.CSSProperties = { display: "flex", alignItems: "center", gap: "12px" };
-    const navStyle: React.CSSProperties = { display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" };
-    const linkStyle: React.CSSProperties = { color: "inherit", textDecoration: "none" };
-    const socialStyle: React.CSSProperties = { display: "flex", gap: "8px", alignItems: "center" };
-    const smallStyle: React.CSSProperties = { opacity: 0.8 };
-
-    return (
-        <footer className={className} style={containerStyle} aria-label="Pied de page">
-            <div style={leftStyle}>
-                <nav aria-label="Liens du pied de page" style={navStyle}>
-                    {links.map((l) => (
-                        <a key={l.href} href={l.href} style={linkStyle}>
-                            {l.label}
-                        </a>
-                    ))}
-                </nav>
+  return (
+    <footer className="border-t border-border bg-background/80 backdrop-blur-lg">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Logo et nom */}
+          <div className="flex items-center gap-3 justify-center md:justify-start">
+            <img 
+              src="/favicon.ico" 
+              alt="Logo Studio ie^2" 
+              className="w-24 h-24"
+            />
+            <div>
+              <h3 className="text-xl font-bold text-foreground">Studio ie²</h3>
+              <p className="text-sm text-muted-foreground">Événements sportifs</p>
             </div>
+          </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                <div style={socialStyle} aria-label="Réseaux sociaux" role="navigation">
-                    <a href="https://www.instagram.com/lakerun_biel/" target="_blank" aria-label="Instagram" style={{ color: "inherit", display: "flex", alignItems: "center" }}>
-                        {socialIcons.instagram}
-                    </a>
-                    <a href="https://www.tiktok.com/@studio_ie2" aria-label="TikTok" style={{ color: "inherit", display: "flex", alignItems: "center" }}>
-                        {socialIcons.tiktok}
-                    </a>
-                </div>
-                <div style={smallStyle}>&copy; {year} {company}</div>
+          {/* Liens de navigation */}
+          <nav className="flex flex-col md:flex-row gap-4 items-center justify-center" aria-label="Liens du pied de page">
+            <a 
+              href="/" 
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Accueil
+            </a>
+            <a 
+              href="/tournoi-clash" 
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Clash Royale
+            </a>
+            <a 
+              href="/tournoi-echecs" 
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Échecs
+            </a>
+            <a 
+              href="/course-a-pied" 
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Course à pied
+            </a>
+          </nav>
+
+          {/* Réseaux sociaux et copyright */}
+          <div className="flex flex-col items-center md:items-end gap-4">
+            <div className="flex gap-4" aria-label="Réseaux sociaux">
+              <a 
+                href="https://www.instagram.com/lakerun_biel/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all hover:scale-110"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="mailto:contact@studio-ie2.ch"
+                aria-label="Email"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all hover:scale-110"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
             </div>
-        </footer>
-    );
+            <p className="text-sm text-muted-foreground">
+              &copy; {year} Studio ie². Tous droits réservés.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

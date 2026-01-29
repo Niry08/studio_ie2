@@ -17,7 +17,7 @@ const TournoiEchecs = () => {
               <Target className="w-4 h-4" />
               Stratégie
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
               Championnat d'Échecs
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -44,21 +44,21 @@ const TournoiEchecs = () => {
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Lieu</p>
-                        <p className="text-muted-foreground">-</p>
+                        <p className="text-muted-foreground">Court, BE</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Users className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Participants</p>
-                        <p className="text-muted-foreground">64 places disponibles</p>
+                        <p className="text-muted-foreground">32 places disponibles</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Award className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Prix</p>
-                        <p className="text-muted-foreground">Produits locaux</p>
+                        <p className="text-muted-foreground">Produits locaux + bons cadeaux</p>
                       </div>
                     </div>
                   </div>
@@ -90,7 +90,6 @@ const TournoiEchecs = () => {
                       <p className="font-semibold text-foreground mb-2">Informations pratiques</p>
                       <ul className="list-disc list-inside space-y-1">
                         <li>Inscription sur place possible (sous réserve)</li>
-                        <li>Restauration et boissons sur place - à voir</li>
                       </ul>
                     </div>
                   </div>
@@ -101,6 +100,41 @@ const TournoiEchecs = () => {
             {/* Registration Form */}
             <div>
               <RegistrationForm eventName="le Championnat d'Échecs" showChessFields />
+            </div>
+          </div>
+
+          {/* Sponsors Section */}
+          <div className="mt-12 md:mt-20 mb-12 md:mb-16">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Nos Sponsors</h2>
+              <p className="text-muted-foreground text-sm md:text-base">Merci à nos partenaires qui rendent cet événement possible</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 items-center max-w-2xl mx-auto">
+              {[
+                { name: "Club d'Échecs Court", logo: "/sponsors_images/echecs/club_echecs_court.png", url: "#" },
+                { name: "Croisitour", logo: "/sponsors_images/echecs/croisitour.png", url: "https://www.croisitour.ch" }
+              ].map((sponsor) => (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-card rounded-xl p-4 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-border/50 hover:border-primary/30 cursor-pointer"
+                >
+                  <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
+                    <div className="relative w-full h-16 md:h-24 flex items-center justify-center">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="max-w-full max-h-full object-contain transition-all duration-300"
+                      />
+                    </div>
+                    <p className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+                      {sponsor.name}
+                    </p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>

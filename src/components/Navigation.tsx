@@ -13,7 +13,7 @@ const Navigation = () => {
             to="/" 
             className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
-            <Trophy className="w-6 h-6" />
+            <img src="/favicon.ico" alt="Logo Studio ie^2" className="w-14 h-14" />
             Studio ie²
           </NavLink>
 
@@ -27,29 +27,29 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-6">
             <NavLink 
               to="/" 
-              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+              activeClassName="text-primary font-semibold after:!scale-x-100"
             >
               Accueil
             </NavLink>
             <NavLink 
               to="/tournoi-clash" 
-              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+              activeClassName="text-primary font-semibold after:!scale-x-100"
             >
               Clash Royale
             </NavLink>
             <NavLink 
               to="/tournoi-echecs" 
-              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+              activeClassName="text-primary font-semibold after:!scale-x-100"
             >
               Échecs
             </NavLink>
             <NavLink 
               to="/course-a-pied" 
-              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+              className="relative px-4 py-2 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+              activeClassName="text-primary font-semibold after:!scale-x-100"
             >
               Course à pied
             </NavLink>
@@ -61,32 +61,32 @@ const Navigation = () => {
             <div className="px-4 py-4 space-y-2">
               <NavLink 
                 to="/" 
-                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
-                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                activeClassName="text-primary font-semibold after:!scale-x-100"
                 onClick={() => setIsOpen(false)}
               >
                 Accueil
               </NavLink>
               <NavLink 
                 to="/tournoi-clash" 
-                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
-                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                activeClassName="text-primary font-semibold after:!scale-x-100"
                 onClick={() => setIsOpen(false)}
               >
                 Clash Royale
               </NavLink>
               <NavLink 
                 to="/tournoi-echecs" 
-                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
-                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                activeClassName="text-primary font-semibold after:!scale-x-100"
                 onClick={() => setIsOpen(false)}
               >
                 Échecs
               </NavLink>
               <NavLink 
                 to="/course-a-pied" 
-                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors"
-                activeClassName="text-primary font-semibold after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary"
+                className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                activeClassName="text-primary font-semibold after:!scale-x-100"
                 onClick={() => setIsOpen(false)}
               >
                 Course à pied

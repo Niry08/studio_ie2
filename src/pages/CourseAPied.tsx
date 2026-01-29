@@ -124,7 +124,8 @@ const CourseAPied = () => {
               { name: "Coop", logo: "/sponsors_images/course/coop.png", url: "https://www.coop.ch" },
               { name: "Focus Water", logo: "/sponsors_images/course/focus_water.png", url: "https://www.focus-water.com" },
               { name: "Nurissa", logo: "/sponsors_images/course/nurissa.svg", url: "https://www.nurissa.ch" },
-              { name: "Valgine", logo: "/sponsors_images/course/valgine.png", url: "https://guenat-sa-montres-valgine.digitalone.site/" }
+              { name: "Valgine", logo: "/sponsors_images/course/valgine.png", url: "https://guenat-sa-montres-valgine.digitalone.site/" },
+              { name: "Commune d'Aegerten", logo: "/sponsors_images/course/commune_aegerten.png", url: "https://www.aegerten.ch" }
             ].map((sponsor) => (
               <a
                 key={sponsor.name}

@@ -75,8 +75,8 @@ const Index = () => {
             <EventCard
               title="Course à Pied"
               description="Course à pied de 6km dans un cadre exceptionnel"
-              date="09.05.2025"
-              location="Aegerten"
+              date="09.05.2026"
+              location="Nidau -> Aegerten"
               participants="Pas de limites de places"
               link="/course-a-pied"
               icon={<Award className="w-6 h-6" />}
