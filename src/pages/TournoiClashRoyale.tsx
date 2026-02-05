@@ -21,7 +21,7 @@ const TournoiClashRoyale = () => {
               Tournoi Clash Royale
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Participez à un tournoi Clash Royale en interne au Ceff. Relevez le défi, affrontez les autres étudiants et devenez le maître incontesté !
+              Participez au tournoi Clash Royale du Ceff Industrie. Relevez le défi, affrontez les autres étudiants et devenez le maître incontesté !
             </p>
           </div>
 

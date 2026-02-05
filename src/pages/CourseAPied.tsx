@@ -20,7 +20,7 @@ const CourseAPied = () => {
               Course à Pied
             </h1>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Participez à notre course de 5.11km dans le magnifique village d'aegerten. Cela se déroulera durant la fête de village.
+              Participez à cette course à pied au bord de l'eau, Profitez d'un parcours pittoresque au bord de l'eau de 5km entre Nidau et Aegerten.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ const CourseAPied = () => {
                     <Info className="w-4 h-4 md:w-5 md:h-5 text-secondary mt-1" />
                     <div>
                       <p className="font-semibold text-foreground text-sm md:text-base">Infos pratiques</p>
-                      <p className="text-sm md:text-base">Durant la fête de musique</p>
+                      <p className="text-sm md:text-base">Durant la fête du village</p>
                       <p className="text-sm md:text-base">Boissons et snacks disponibles</p>
                     </div>
                   </div>
