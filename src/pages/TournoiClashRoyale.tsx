@@ -136,7 +136,7 @@ const TournoiClashRoyale = () => {
             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 items-center max-w-2xl mx-auto">
               {[
                 { name: "Ceff Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" },
-                { name: "Pr. Duscher", logo: "/sponsors_images/clash_royale/duscher.png", url: "mailto:Ismael.Duescher@ceff.ch" }
+                { name: "Pr. Düscher", logo: "/sponsors_images/clash_royale/duscher.png", url: "mailto:Ismael.Duescher@ceff.ch" }
               ].map((sponsor) => (
                 <a
                   key={sponsor.name}
