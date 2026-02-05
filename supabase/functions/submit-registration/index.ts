@@ -16,6 +16,8 @@ interface RegistrationRequest {
   clashRoyalUsername?: string;
   eloOfficiel?: number;
   elo?: number;
+  hasInternetConnection?: boolean;
+  mobileOperator?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -30,9 +32,9 @@ const handler = async (req: Request): Promise<Response> => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    const { eventName, firstName, lastName, email, phone, clashRoyalTag, clashRoyalUsername, eloOfficiel, elo }: RegistrationRequest = await req.json();
+    const { eventName, firstName, lastName, email, phone, clashRoyalTag, clashRoyalUsername, eloOfficiel, elo, hasInternetConnection, mobileOperator }: RegistrationRequest = await req.json();
 
-    console.log('Processing registration:', { eventName, firstName, lastName, email, clashRoyalTag, clashRoyalUsername, eloOfficiel, elo });
+    console.log('Processing registration:', { eventName, firstName, lastName, email, clashRoyalTag, clashRoyalUsername, eloOfficiel, elo, hasInternetConnection, mobileOperator });
 
     // Validate required fields
     if (!eventName || !firstName || !lastName || !email || !phone) {
@@ -59,6 +61,8 @@ const handler = async (req: Request): Promise<Response> => {
         clash_royal_username: clashRoyalUsername || null,
         elo_officiel: eloOfficiel || null,
         elo: elo || null,
+        has_internet_connection: hasInternetConnection ?? null,
+        mobile_operator: mobileOperator || null,
       })
       .select()
       .single();

@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -23,6 +25,8 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
     clashRoyalUsername: "",
     eloOfficiel: "",
     elo: "",
+    hasInternetConnection: false,
+    mobileOperator: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,6 +45,8 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
           clashRoyalUsername: formData.clashRoyalUsername || null,
           eloOfficiel: formData.eloOfficiel ? parseInt(formData.eloOfficiel) : null,
           elo: formData.elo ? parseInt(formData.elo) : null,
+          hasInternetConnection: showClashRoyalFields ? formData.hasInternetConnection : null,
+          mobileOperator: formData.mobileOperator || null,
         },
       });
 
@@ -50,7 +56,7 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
         description: `Vous êtes inscrit(e) pour ${eventName}. Un email de confirmation vous sera envoyé.`,
       });
       
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", clashRoyalTag: "", clashRoyalUsername: "", eloOfficiel: "", elo: "" });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", clashRoyalTag: "", clashRoyalUsername: "", eloOfficiel: "", elo: "", hasInternetConnection: false, mobileOperator: "" });
     } catch (error) {
       console.error('Registration error:', error);
       toast.error("Erreur lors de l'inscription", {
@@ -150,6 +156,38 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
                   onChange={handleChange}
                   placeholder="Votre pseudo en jeu"
                 />
+              </div>
+              <div className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
+                <div className="space-y-0.5">
+                  <Label htmlFor="hasInternetConnection">Connexion internet disponible</Label>
+                  <p className="text-sm text-muted-foreground">Avez-vous accès à internet sur votre téléphone ?</p>
+                </div>
+                <Switch
+                  id="hasInternetConnection"
+                  checked={formData.hasInternetConnection}
+                  onCheckedChange={(checked) => setFormData(prev => ({ ...prev, hasInternetConnection: checked }))}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="mobileOperator">Opérateur mobile</Label>
+                <Select 
+                  value={formData.mobileOperator} 
+                  onValueChange={(value) => setFormData(prev => ({ ...prev, mobileOperator: value }))}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Sélectionnez votre opérateur" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="swisscom">Swisscom</SelectItem>
+                    <SelectItem value="sunrise">Sunrise</SelectItem>
+                    <SelectItem value="salt">Salt</SelectItem>
+                    <SelectItem value="yallo">Yallo</SelectItem>
+                    <SelectItem value="wingo">Wingo</SelectItem>
+                    <SelectItem value="m-budget">M-Budget Mobile</SelectItem>
+                    <SelectItem value="coop">Coop Mobile</SelectItem>
+                    <SelectItem value="autre">Autre</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </>
           )}

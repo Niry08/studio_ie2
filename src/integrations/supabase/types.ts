@@ -24,8 +24,10 @@ export type Database = {
           email: string
           event_name: string
           first_name: string
+          has_internet_connection: boolean | null
           id: string
           last_name: string
+          mobile_operator: string | null
           phone: string
         }
         Insert: {
@@ -37,8 +39,10 @@ export type Database = {
           email: string
           event_name: string
           first_name: string
+          has_internet_connection?: boolean | null
           id?: string
           last_name: string
+          mobile_operator?: string | null
           phone: string
         }
         Update: {
@@ -50,8 +54,10 @@ export type Database = {
           email?: string
           event_name?: string
           first_name?: string
+          has_internet_connection?: boolean | null
           id?: string
           last_name?: string
+          mobile_operator?: string | null
           phone?: string
         }
         Relationships: []
