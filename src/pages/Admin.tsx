@@ -26,7 +26,8 @@ interface Registration {
   mobile_operator: string | null;
 }
 
-const DEVICE_AUTH_KEY = "Pa$$w0rd";
+const DEVICE_AUTH_KEY = "admin_authenticated";
+const ADMIN_PASSWORD = "Pa$$w0rd";
 const PASSWORD_DB = "fete-etudiante-admin-2024";
 
 const Admin = () => {
@@ -46,7 +47,7 @@ const Admin = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (password === PASSWORD_DB) {
+    if (password === ADMIN_PASSWORD) {
       localStorage.setItem(DEVICE_AUTH_KEY, "true");
       setIsAuthenticated(true);
       toast.success("Connexion réussie");

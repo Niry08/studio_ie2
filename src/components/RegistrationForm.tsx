@@ -53,7 +53,7 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
       if (error) throw error;
 
       toast.success("Inscription réussie !", {
-        description: `Vous êtes inscrit(e) pour ${eventName}. Un email de confirmation vous sera envoyé.`,
+        description: `Vous êtes inscrit(e) pour ${eventName}. Nous vous contacterons bientôt par email.`,
       });
       
       setFormData({ firstName: "", lastName: "", email: "", phone: "", clashRoyalTag: "", clashRoyalUsername: "", eloOfficiel: "", elo: "", hasInternetConnection: false, mobileOperator: "" });
