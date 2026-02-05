@@ -2,13 +2,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import RegistrationForm from "@/components/RegistrationForm";
 import { Card, CardContent } from "@/components/ui/card";
-import { Trophy, Calendar, MapPin, Users, Award, Target } from "lucide-react";
+import { Trophy, Calendar, MapPin, Users, Award, ListCheck, Medal } from "lucide-react";
 
 const TournoiClashRoyale = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <div className="pt-24 px-4">
         <div className="container mx-auto max-w-6xl">
           {/* Hero */}
@@ -30,7 +30,7 @@ const TournoiClashRoyale = () => {
             <div className="space-y-6">
               <Card className="shadow-card">
                 <CardContent className="pt-6">
-                  <h2 className="text-2xl font-bold mb-6">Détails de l'événement</h2>
+                  <h2 className="text-2xl font-bold mb-3">Détails de l'événement</h2>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <Calendar className="w-5 h-5 text-primary mt-1" />
@@ -43,8 +43,7 @@ const TournoiClashRoyale = () => {
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Lieu</p>
-                        <p className="text-muted-foreground">Ceff Industrie</p>
-                        <p className="text-muted-foreground">Baptiste-Savoye 26, 2610 St-Imier</p>
+                        <p className="text-muted-foreground">Ceff Industrie, Baptiste-Savoye 26, 2610 St-Imier</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -61,40 +60,65 @@ const TournoiClashRoyale = () => {
                         <p className="text-muted-foreground">Gratuit</p>
                       </div>
                     </div>
+                    <div className="flex items-start gap-3">
+                      <ListCheck className="w-5 h-5 text-primary mt-1" />
+                      <div>
+                        <p className="font-semibold">Requis</p>
+                        <p className="text-muted-foreground">Compte Discord</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Medal className="w-5 h-5 text-primary mt-1" />
+                      <div>
+                        <p className="font-semibold">Prix</p>
+                        <p className="text-muted-foreground">Pass Royal + Cash Prize</p>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="shadow-card">
-                <CardContent className="pt-6">
-                  <h2 className="text-2xl font-bold mb-6">Format du tournoi</h2>
-                  <div className="space-y-4 text-muted-foreground">
-                    <div className="flex items-start gap-3">
-                      <Target className="w-5 h-5 text-secondary mt-1" />
-                      <div>
-                        <p className="font-semibold text-foreground">Phase de groupes</p>
-                        <p>32 groupes de 4 joueurs - les 2 premiers de chaque groupe en phase éliminatoire</p>
+              {/* Tournament Format */}
+              <div>
+                <Card>
+                  <CardContent className="pt-4 space-y-6">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">Format du tournoi</h2>
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-sm font-bold text-primary">1</span>
+                        </div>
+                        <h3 className="font-bold text-lg">Phase de groupes</h3>
+                      </div>
+                      <p className="text-muted-foreground ml-11">
+                        32 groupes de 4 joueurs. Les deux premiers de chaque groupe se qualifient pour la phase éliminatoire.
+                      </p>
+                    </div>
+
+                    <div className="border-t pt-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-sm font-bold text-primary">2</span>
+                        </div>
+                        <h3 className="font-bold text-lg">Phase éliminatoire</h3>
+                      </div>
+                      <p className="text-muted-foreground ml-11 mb-3">
+                        Tableau à élimination directe pour les 64 joueurs qualifiés.
+                      </p>
+                      <div className="ml-11 space-y-2">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground" />
+                          <span className="text-sm text-muted-foreground">Quarts de finale : Best of 3</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground" />
+                          <span className="text-sm text-muted-foreground">Finale : Best of 5</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Trophy className="w-5 h-5 text-secondary mt-1" />
-                      <div>
-                        <p className="font-semibold text-foreground">Phase éliminatoire</p>
-                        <p>Les 64 joueurs restants en élimination directe</p>
-                        <p>BO3 depuis les quarts</p>
-                        <p>BO5 pour la finale</p>
-                      </div>
-                    </div>
-                    <div className="bg-muted/50 p-4 rounded-lg mt-4">
-                      <p className="font-semibold text-foreground mb-2">Conditions de participation</p>
-                      <ul className="list-disc list-inside space-y-1">
-                        <li>Connexion Discord obligatoire</li>
-                        <li>Compte Clash Royale requis</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
 
             {/* Registration Form */}
@@ -106,12 +130,13 @@ const TournoiClashRoyale = () => {
           {/* Sponsors Section */}
           <div className="mt-12 md:mt-20 mb-12 md:mb-16">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Notre Sponsor</h2>
-              <p className="text-muted-foreground text-sm md:text-base">Merci à notre partenaire qui rend cet événement possible</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Nos Partenaires</h2>
+              <p className="text-muted-foreground text-sm md:text-base">Merci à nos partenaires qui rendent cet événement possible</p>
             </div>
-            <div className="grid grid-cols-1 gap-4 md:gap-8 items-center max-w-md mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 items-center max-w-2xl mx-auto">
               {[
-                { name: "CEFF Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" }
+                { name: "Ceff Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" },
+                { name: "Pr. Duscher", logo: "/sponsors_images/clash_royale/duscher.png", url: "mailto:Ismael.Duescher@ceff.ch" }
               ].map((sponsor) => (
                 <a
                   key={sponsor.name}
@@ -136,6 +161,7 @@ const TournoiClashRoyale = () => {
               ))}
             </div>
           </div>
+
         </div>
       </div>
 

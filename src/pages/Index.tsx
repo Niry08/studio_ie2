@@ -65,7 +65,7 @@ const Index = () => {
             />
             <EventCard
               title="Tournoi d'Échecs"
-              description="Démontrez votre stratégie dans notre championnat d'échecs"
+              description="Démontrez votre stratégie dans notre tournoi d'échecs"
               date="Mois de mai"
               location="-"
               participants="2x32 places disponibles"
@@ -103,7 +103,7 @@ const Index = () => {
               { name: "Croisitour", logo: "/sponsors_images/echecs/croisitour.png", url: "https://www.croisitour.ch" },
               { name: "Coop", logo: "/sponsors_images/course/coop.png", url: "https://www.coop.ch" },
               { name: "Commune d'Aegerten", logo: "/sponsors_images/course/commune_aegerten.png", url: "https://www.aegerten.ch" },
-              { name: "CEFF Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" },
+              { name: "Ceff Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" },
             ].map((sponsor) => (
               <a
                 key={sponsor.name}

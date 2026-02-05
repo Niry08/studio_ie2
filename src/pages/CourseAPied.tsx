@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, Calendar, MapPin, Users, Trophy, Target } from "lucide-react";
+import { Award, Calendar, MapPin, Users, Trophy, Target, Info } from "lucide-react";
 
 const CourseAPied = () => {
   return (
@@ -79,13 +79,13 @@ const CourseAPied = () => {
                       <p className="text-sm md:text-base">Tout le monde court dans la même catégorie</p>
                     </div>
                   </div>
-                  <div className="bg-muted/50 p-3 md:p-4 rounded-lg mt-3 md:mt-4">
-                    <p className="font-semibold text-foreground mb-2 text-sm md:text-base">Informations pratiques</p>
-                    <ul className="list-disc list-inside space-y-1 text-sm md:text-base">
-                      <li>Durant la fête de village</li>
-                      <li>Boissons disponibles</li>
-                      <li>Snacks disponibles</li>
-                    </ul>
+                  <div className="flex items-start gap-2 md:gap-3">
+                    <Info className="w-4 h-4 md:w-5 md:h-5 text-secondary mt-1" />
+                    <div>
+                      <p className="font-semibold text-foreground text-sm md:text-base">Infos pratiques</p>
+                      <p className="text-sm md:text-base">Durant la fête de musique</p>
+                      <p className="text-sm md:text-base">Boissons et snacks disponibles</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -116,7 +116,7 @@ const CourseAPied = () => {
         {/* Sponsors Section */}
         <div className="container mx-auto max-w-6xl mt-12 md:mt-20 mb-12 md:mb-16 px-4">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Nos Sponsors</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Nos Partenaires</h2>
             <p className="text-muted-foreground text-sm md:text-base">Merci à nos partenaires qui rendent cet événement possible</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center">

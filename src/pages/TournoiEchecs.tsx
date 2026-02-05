@@ -18,7 +18,7 @@ const TournoiEchecs = () => {
               Stratégie
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-              Championnat d'Échecs
+              Tournoi d'Échecs
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Démontrez votre maîtrise stratégique lors de notre championnat d'échecs. 
@@ -106,7 +106,7 @@ const TournoiEchecs = () => {
           {/* Sponsors Section */}
           <div className="mt-12 md:mt-20 mb-12 md:mb-16">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Nos Sponsors</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Nos Partenaires</h2>
               <p className="text-muted-foreground text-sm md:text-base">Merci à nos partenaires qui rendent cet événement possible</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 items-center max-w-2xl mx-auto">
@@ -137,6 +137,7 @@ const TournoiEchecs = () => {
               ))}
             </div>
           </div>
+
         </div>
       </div>
 

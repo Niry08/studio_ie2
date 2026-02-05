@@ -55,7 +55,7 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
       toast.success("Inscription réussie !", {
         description: `Vous êtes inscrit(e) pour ${eventName}. Nous vous contacterons bientôt par email.`,
       });
-      
+
       setFormData({ firstName: "", lastName: "", email: "", phone: "", clashRoyalTag: "", clashRoyalUsername: "", eloOfficiel: "", elo: "", hasInternetConnection: false, mobileOperator: "" });
     } catch (error) {
       console.error('Registration error:', error);
@@ -82,31 +82,29 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="firstName">Prénom *</Label>
-              <Input
-                id="firstName"
-                name="firstName"
-                type="text"
-                required
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="Votre prénom"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="lastName">Nom *</Label>
-              <Input
-                id="lastName"
-                name="lastName"
-                type="text"
-                required
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Votre nom"
-              />
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="firstName">Prénom *</Label>
+            <Input
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="Votre prénom"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="lastName">Nom *</Label>
+            <Input
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Votre nom"
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email *</Label>
@@ -157,21 +155,23 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
                   placeholder="Votre pseudo en jeu"
                 />
               </div>
-              <div className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
-                <div className="space-y-0.5">
-                  <Label htmlFor="hasInternetConnection">Connexion internet disponible</Label>
-                  <p className="text-sm text-muted-foreground">Avez-vous accès à internet sur votre téléphone ?</p>
+              <div className="space-y-2">
+                <Label htmlFor="hasInternetConnection">Connexion internet disponible</Label>
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <p className="text-sm text-muted-foreground">Avez-vous accès à internet sur votre téléphone ?</p>
+                  </div>
+                  <Switch
+                    id="hasInternetConnection"
+                    checked={formData.hasInternetConnection}
+                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, hasInternetConnection: checked }))}
+                  />
                 </div>
-                <Switch
-                  id="hasInternetConnection"
-                  checked={formData.hasInternetConnection}
-                  onCheckedChange={(checked) => setFormData(prev => ({ ...prev, hasInternetConnection: checked }))}
-                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="mobileOperator">Opérateur mobile</Label>
-                <Select 
-                  value={formData.mobileOperator} 
+                <Select
+                  value={formData.mobileOperator}
                   onValueChange={(value) => setFormData(prev => ({ ...prev, mobileOperator: value }))}
                 >
                   <SelectTrigger>
