@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import TournoiClash from "./pages/TournoiClashRoyale";
 import TournoiEchecs from "./pages/TournoiEchecs";
 import CourseAPied from "./pages/CourseAPied";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/tournoi-clash" element={<TournoiClash />} />
           <Route path="/tournoi-echecs" element={<TournoiEchecs />} />
           <Route path="/course-a-pied" element={<CourseAPied />} />
+          <Route path="/admin-fete" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
