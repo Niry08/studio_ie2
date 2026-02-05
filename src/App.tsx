@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import TournoiClash from "./pages/TournoiClashRoyale";
+import TournoiClashRoyale from "./pages/TournoiClashRoyale";
 import TournoiEchecs from "./pages/TournoiEchecs";
 import CourseAPied from "./pages/CourseAPied";
 import Admin from "./pages/Admin";
@@ -20,10 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/tournoi-clash" element={<TournoiClash />} />
+          <Route path="/tournoi-clash-royale" element={<TournoiClashRoyale />} />
           <Route path="/tournoi-echecs" element={<TournoiEchecs />} />
           <Route path="/course-a-pied" element={<CourseAPied />} />
-          <Route path="/admin-fete" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

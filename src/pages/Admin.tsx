@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { toast } from "sonner";
@@ -21,10 +22,12 @@ interface Registration {
   clash_royal_username: string | null;
   elo_officiel: number | null;
   elo: number | null;
+  has_internet_connection: boolean | null;
+  mobile_operator: string | null;
 }
 
-const DEVICE_AUTH_KEY = "fete-etudiante-admin-auth";
-const ADMIN_PASSWORD = "fete-etudiante-admin-2024";
+const DEVICE_AUTH_KEY = "Pa$$w0rd";
+const PASSWORD_DB = "fete-etudiante-admin-2024";
 
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -33,7 +36,6 @@ const Admin = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Check if device is already authenticated
     const savedAuth = localStorage.getItem(DEVICE_AUTH_KEY);
     if (savedAuth === "true") {
       setIsAuthenticated(true);
@@ -44,7 +46,7 @@ const Admin = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (password === ADMIN_PASSWORD) {
+    if (password === PASSWORD_DB) {
       localStorage.setItem(DEVICE_AUTH_KEY, "true");
       setIsAuthenticated(true);
       toast.success("Connexion réussie");
@@ -66,7 +68,7 @@ const Admin = () => {
     try {
       const { data, error } = await supabase.functions.invoke('get-registrations', {
         headers: {
-          'x-admin-password': ADMIN_PASSWORD
+          'x-admin-password': PASSWORD_DB
         }
       });
 
@@ -116,7 +118,9 @@ const Admin = () => {
       reg.clash_royal_tag || "",
       reg.clash_royal_username || "",
       reg.elo_officiel?.toString() || "",
-      reg.elo?.toString() || ""
+      reg.elo?.toString() || "",
+      reg.has_internet_connection.toString() || "",
+      reg.mobile_operator || ""
     ]);
 
     const csvContent = [
@@ -149,6 +153,7 @@ const Admin = () => {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <Navigation />
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <Lock className="h-12 w-12 mx-auto text-muted-foreground mb-2" />
@@ -187,7 +192,8 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
+      <Navigation />
+      <div className="max-w-7xl mx-auto pt-16">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold">Administration</h1>
@@ -204,7 +210,7 @@ const Admin = () => {
               <Download className="h-4 w-4 mr-2" />
               Télécharger CSV
             </Button>
-            <Button variant="ghost" onClick={handleLogout}>
+            <Button onClick={handleLogout}>
               Déconnexion
             </Button>
           </div>
@@ -265,6 +271,15 @@ const Admin = () => {
                           )}
                           {reg.elo && (
                             <div>Elo estimé: {reg.elo}</div>
+                          )}
+                          {reg.elo && (
+                            <div>Elo estimé: {reg.elo}</div>
+                          )}
+                          {reg.has_internet_connection && (
+                            <div>Connexion Internet: {reg.has_internet_connection ? "Oui" : "Non"}</div>
+                          )}
+                          {reg.mobile_operator && (
+                            <div>Opérateur mobile: {reg.mobile_operator}</div>
                           )}
                         </TableCell>
                       </TableRow>

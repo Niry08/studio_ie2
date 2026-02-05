@@ -36,14 +36,15 @@ const TournoiClashRoyale = () => {
                       <Calendar className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Date</p>
-                        <p className="text-muted-foreground">Vendredi avant les vacances de pâques</p>
+                        <p className="text-muted-foreground">Mai 2026</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Lieu</p>
-                        <p className="text-muted-foreground">Au Ceff Industrie</p>
+                        <p className="text-muted-foreground">Ceff Industrie</p>
+                        <p className="text-muted-foreground">Baptiste-Savoye 26, 2610 St-Imier</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -72,20 +73,23 @@ const TournoiClashRoyale = () => {
                       <Target className="w-5 h-5 text-secondary mt-1" />
                       <div>
                         <p className="font-semibold text-foreground">Phase de groupes</p>
-                        <p>8 groupes de 16 joueurs, format Swiss</p>
+                        <p>32 groupes de 4 joueurs - les 2 premiers de chaque groupe en phase éliminatoire</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Trophy className="w-5 h-5 text-secondary mt-1" />
                       <div>
-                        <p className="font-semibold text-foreground">Phase finale</p>
-                        <p>Les 32 meilleurs joueurs en élimination directe</p>
+                        <p className="font-semibold text-foreground">Phase éliminatoire</p>
+                        <p>Les 64 joueurs restants en élimination directe</p>
+                        <p>BO3 depuis les quarts</p>
+                        <p>BO5 pour la finale</p>
                       </div>
                     </div>
                     <div className="bg-muted/50 p-4 rounded-lg mt-4">
                       <p className="font-semibold text-foreground mb-2">Conditions de participation</p>
                       <ul className="list-disc list-inside space-y-1">
                         <li>Connexion Discord obligatoire</li>
+                        <li>Compte Clash Royale requis</li>
                       </ul>
                     </div>
                   </div>

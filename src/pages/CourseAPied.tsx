@@ -17,10 +17,10 @@ const CourseAPied = () => {
               Sport
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-foreground px-4">
-              Course à Pied 6km
+              Course à Pied
             </h1>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Participez à notre course de 6km dans le magnifique village d'aegerten. Cela se déroulera durant la fête de village.
+              Participez à notre course de 5.11km dans le magnifique village d'aegerten. Cela se déroulera durant la fête de village.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ const CourseAPied = () => {
                     <Award className="w-4 h-4 md:w-5 md:h-5 text-primary mt-1" />
                     <div>
                       <p className="font-semibold text-sm md:text-base">Prix</p>
-                      <p className="text-muted-foreground text-sm md:text-base">Goodies + argent (vainqueurs)</p>
+                      <p className="text-muted-foreground text-sm md:text-base">Snacks + argent (vainqueurs)</p>
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const CourseAPied = () => {
                     <Trophy className="w-4 h-4 md:w-5 md:h-5 text-secondary mt-1" />
                     <div>
                       <p className="font-semibold text-foreground text-sm md:text-base">Parcours</p>
-                      <p className="text-sm md:text-base">6km de pur bonheur</p>
+                      <p className="text-sm md:text-base">5.11km de pur bonheur</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2 md:gap-3">
