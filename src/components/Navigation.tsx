@@ -68,7 +68,7 @@ const Navigation = () => {
                 Accueil
               </NavLink>
               <NavLink 
-                to="/tournoi-clash" 
+                to="/tournoi-clash-royale" 
                 className="relative block px-4 py-3 text-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
                 activeClassName="text-primary font-semibold after:!scale-x-100"
                 onClick={() => setIsOpen(false)}

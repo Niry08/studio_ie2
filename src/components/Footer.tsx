@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               Accueil
             </a>
             <a 
-              href="/tournoi-clash" 
+              href="/tournoi-clash-royale" 
               className="text-foreground hover:text-primary transition-colors"
             >
               Clash Royale

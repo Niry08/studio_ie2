@@ -35,7 +35,7 @@ const Index = () => {
             Dans le cadre de notre TPI, nous avons dû créer notre entreprise d'événementiel. Nous allons organiser différents événements tels qu'un tournoi Clash Royale, un tournoi d'échecs et une course à pied.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/tournoi-clash">
+            <Link to="/tournoi-clash-royale">
               <Button size="lg" className="shadow-elegant bg-primary hover:bg-primary/90 text-white">
                 Découvrir nos événements
               </Button>
@@ -60,7 +60,7 @@ const Index = () => {
               date="Vendredi avant les vacances de Pâques"
               location="Ceff Industrie"
               participants="128 places disponibles"
-              link="/tournoi-clash"
+              link="/tournoi-clash-royale"
               icon={<Skull className="w-6 h-6" />}
             />
             <EventCard
