@@ -9,6 +9,14 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Download, Lock, RefreshCw, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 
 interface Registration {
   id: string;
@@ -27,7 +35,7 @@ interface Registration {
 }
 
 const DEVICE_AUTH_KEY = "admin_authenticated";
-const ADMIN_PASSWORD = "Pa$$w0rd";
+const ADMIN_PASSWORD = "Pa$$w0rd1234"
 const PASSWORD_DB = "fete-etudiante-admin-2024";
 
 const Admin = () => {
@@ -35,6 +43,13 @@ const Admin = () => {
   const [password, setPassword] = useState("");
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [filterEvent, setFilterEvent] = useState<string>("all");
+
+  const uniqueEvents = Array.from(new Set(registrations.map(r => r.event_name)));
+
+  const filteredRegistrations = filterEvent === "all"
+    ? registrations
+    : registrations.filter(r => r.event_name === filterEvent);
 
   useEffect(() => {
     const savedAuth = localStorage.getItem(DEVICE_AUTH_KEY);
@@ -46,7 +61,7 @@ const Admin = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (password === ADMIN_PASSWORD) {
       localStorage.setItem(DEVICE_AUTH_KEY, "true");
       setIsAuthenticated(true);
@@ -89,7 +104,7 @@ const Admin = () => {
   };
 
   const downloadCSV = () => {
-    if (registrations.length === 0) {
+    if (filteredRegistrations.length === 0) {
       toast.error("Aucune donnée à exporter");
       return;
     }
@@ -108,7 +123,7 @@ const Admin = () => {
       "Elo Estimé"
     ];
 
-    const rows = registrations.map(reg => [
+    const rows = filteredRegistrations.map(reg => [
       reg.id,
       new Date(reg.created_at).toLocaleString('fr-CH'),
       reg.event_name,
@@ -137,7 +152,7 @@ const Admin = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     toast.success("CSV téléchargé avec succès");
   };
 
@@ -199,15 +214,28 @@ const Admin = () => {
           <div>
             <h1 className="text-3xl font-bold">Administration</h1>
             <p className="text-muted-foreground">
-              Gestion des inscriptions - {registrations.length} inscription(s)
+              Gestion des inscriptions - {filteredRegistrations.length} inscription(s)
             </p>
           </div>
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-2 flex-wrap items-center">
+            <Select value={filterEvent} onValueChange={setFilterEvent}>
+              <SelectTrigger className="w-[200px]">
+                <SelectValue placeholder="Filtrer par événement" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Tous les événements</SelectItem>
+                {uniqueEvents.map((event) => (
+                  <SelectItem key={event} value={event}>
+                    {event}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
             <Button variant="outline" onClick={fetchRegistrations} disabled={isLoading}>
               <RefreshCw className={`h-4 w-4 mr-2 ${isLoading ? 'animate-spin' : ''}`} />
               Actualiser
             </Button>
-            <Button onClick={downloadCSV} disabled={registrations.length === 0}>
+            <Button onClick={downloadCSV} disabled={filteredRegistrations.length === 0}>
               <Download className="h-4 w-4 mr-2" />
               Télécharger CSV
             </Button>
@@ -238,14 +266,14 @@ const Admin = () => {
                         Chargement...
                       </TableCell>
                     </TableRow>
-                  ) : registrations.length === 0 ? (
+                  ) : filteredRegistrations.length === 0 ? (
                     <TableRow>
                       <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
-                        Aucune inscription pour le moment
+                        Aucune inscription trouvée
                       </TableCell>
                     </TableRow>
                   ) : (
-                    registrations.map((reg) => (
+                    filteredRegistrations.map((reg) => (
                       <TableRow key={reg.id}>
                         <TableCell className="whitespace-nowrap">
                           {formatDate(reg.created_at)}
@@ -269,9 +297,6 @@ const Admin = () => {
                           )}
                           {reg.elo_officiel && (
                             <div>Elo officiel: {reg.elo_officiel}</div>
-                          )}
-                          {reg.elo && (
-                            <div>Elo estimé: {reg.elo}</div>
                           )}
                           {reg.elo && (
                             <div>Elo estimé: {reg.elo}</div>
