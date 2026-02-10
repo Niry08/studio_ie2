@@ -96,6 +96,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 items-center">
             {[
+              { name: "Frapolux", logo: "/sponsors_images/course/frapolux.png", url: "https://www.fraporlux.com" },
               { name: "Valgine", logo: "/sponsors_images/course/valgine.png", url: "https://guenat-sa-montres-valgine.digitalone.site/" },
               { name: "Nurissa", logo: "/sponsors_images/course/nurissa.svg", url: "https://www.nurissa.ch" },
               { name: "Focus Water", logo: "/sponsors_images/course/focus_water.png", url: "https://www.focus-water.com" },
@@ -103,7 +104,6 @@ const Index = () => {
               { name: "Croisitour", logo: "/sponsors_images/echecs/croisitour.png", url: "https://www.croisitour.ch" },
               { name: "Coop", logo: "/sponsors_images/course/coop.png", url: "https://www.coop.ch" },
               { name: "Commune d'Aegerten", logo: "/sponsors_images/course/commune_aegerten.png", url: "https://www.aegerten.ch" },
-              { name: "Ceff Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" },
             ].map((sponsor) => (
               <a
                 key={sponsor.name}
