@@ -123,6 +123,7 @@ const CourseAPied = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center">
             {[
+              { name: "Frapolux", logo: "/sponsors_images/course/frapolux.png", url: "https://www.fraporlux.com" },
               { name: "Coop", logo: "/sponsors_images/course/coop.png", url: "https://www.coop.ch" },
               { name: "Focus Water", logo: "/sponsors_images/course/focus_water.png", url: "https://www.focus-water.com" },
               { name: "Nurissa", logo: "/sponsors_images/course/nurissa.svg", url: "https://www.nurissa.ch" },
