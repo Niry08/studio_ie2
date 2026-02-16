@@ -11,16 +11,15 @@ interface EventCardProps {
   participants: string;
   link: string;
   icon: React.ReactNode;
+  img?: string;
 }
 
-const EventCard = ({ title, description, date, location, participants, link, icon }: EventCardProps) => {
+const EventCard = ({ title, description, date, location, participants, link, icon, img }: EventCardProps) => {
   return (
     <Card className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-gradient-card">
       <CardHeader>
         <div className="flex items-center gap-3 mb-2">
-          <div className="p-2 bg-primary/10 rounded-lg text-primary">
-            {icon}
-          </div>
+            {img ? <img src={img} alt={title} className="w-10 h-10 object-cover rounded-lg" /> : icon}
           <CardTitle className="text-2xl">{title}</CardTitle>
         </div>
         <CardDescription className="text-base">{description}</CardDescription>

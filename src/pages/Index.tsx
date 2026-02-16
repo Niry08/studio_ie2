@@ -23,11 +23,7 @@ const Index = () => {
         </div>
         
         {/* Contenu */}
-        <div className="container mx-auto text-center relative z-20 w-full">
-          <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-primary/20 backdrop-blur-sm text-white border border-white/20 rounded-full text-sm font-semibold">
-            <Trophy className="w-4 h-4" />
-            Organisation d'événements
-          </div>
+        <div className="container mx-auto mt-28 text-center relative z-20 w-full">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
             Vivez des événements inoubliables
           </h1>
@@ -62,6 +58,7 @@ const Index = () => {
               participants="128 places disponibles"
               link="/tournoi-clash-royale"
               icon={<Skull className="w-6 h-6" />}
+              img="/images/events/clash_royale.jpg"
             />
             <EventCard
               title="Tournoi d'Échecs"
@@ -71,6 +68,7 @@ const Index = () => {
               participants="2x32 places disponibles"
               link="/tournoi-echecs"
               icon={<Crown className="w-6 h-6" />}
+              img="/images/events/chess.jpeg"
             />
             <EventCard
               title="Course à Pied"
@@ -80,58 +78,14 @@ const Index = () => {
               participants="Pas de limites de places"
               link="/course-a-pied"
               icon={<Award className="w-6 h-6" />}
+              img="/images/events/running.jpg"  
             />
             </div>
         </div>
       </section>
 
-      {/* Sponsors Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Nos Partenaires</h2>
-            <p className="text-lg text-muted-foreground">
-              Merci à tous nos partenaires qui rendent ces événements possibles
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 items-center">
-            {[
-              { name: "Valgine", logo: "/sponsors_images/course/valgine.png", url: "https://guenat-sa-montres-valgine.digitalone.site/" },
-              { name: "Nurissa", logo: "/sponsors_images/course/nurissa.svg", url: "https://www.nurissa.ch" },
-              { name: "Focus Water", logo: "/sponsors_images/course/focus_water.png", url: "https://www.focus-water.com" },
-              { name: "Club d'Échecs Court", logo: "/sponsors_images/echecs/club_echecs_court.png", url: "#" },
-              { name: "Croisitour", logo: "/sponsors_images/echecs/croisitour.png", url: "https://www.croisitour.ch" },
-              { name: "Coop", logo: "/sponsors_images/course/coop.png", url: "https://www.coop.ch" },
-              { name: "Commune d'Aegerten", logo: "/sponsors_images/course/commune_aegerten.png", url: "https://www.aegerten.ch" },
-              { name: "Ceff Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" },
-            ].map((sponsor) => (
-              <a
-                key={sponsor.name}
-                href={sponsor.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative bg-card rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-border/50 hover:border-primary/30 cursor-pointer"
-              >
-                <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
-                  <div className="relative w-full h-16 md:h-24 flex items-center justify-center">
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="max-w-full max-h-full object-contain transition-all duration-300"
-                    />
-                  </div>
-                  <p className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center">
-                    {sponsor.name}
-                  </p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* About us */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">À propos de nous</h2>
@@ -182,6 +136,51 @@ const Index = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Nos Partenaires</h2>
+            <p className="text-lg text-muted-foreground">
+              Merci à tous nos partenaires qui rendent ces événements possibles
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 items-center">
+            {[
+              { name: "Valgine", logo: "/sponsors_images/course/valgine.png", url: "https://guenat-sa-montres-valgine.digitalone.site/" },
+              { name: "Nurissa", logo: "/sponsors_images/course/nurissa.svg", url: "https://www.nurissa.ch" },
+              { name: "Focus Water", logo: "/sponsors_images/course/focus_water.png", url: "https://www.focus-water.com" },
+              { name: "Club d'Échecs Court", logo: "/sponsors_images/echecs/club_echecs_court.png", url: "#" },
+              { name: "Croisitour", logo: "/sponsors_images/echecs/croisitour.png", url: "https://www.croisitour.ch" },
+              { name: "Coop", logo: "/sponsors_images/course/coop.png", url: "https://www.coop.ch" },
+              { name: "Commune d'Aegerten", logo: "/sponsors_images/course/commune_aegerten.png", url: "https://www.aegerten.ch" },
+              { name: "Ceff Industrie", logo: "/sponsors_images/clash_royale/ceff_industrie.png", url: "https://www.ceff.ch" },
+            ].map((sponsor) => (
+              <a
+                key={sponsor.name}
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-card rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-border/50 hover:border-primary/30 cursor-pointer"
+              >
+                <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
+                  <div className="relative w-full h-16 md:h-24 flex items-center justify-center">
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="max-w-full max-h-full object-contain transition-all duration-300"
+                    />
+                  </div>
+                  <p className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center">
+                    {sponsor.name}
+                  </p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
