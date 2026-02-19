@@ -30,7 +30,7 @@ COPY --from=builder /app/public /usr/share/nginx/html
 # Add nginx configuration for SPA routing
 RUN echo 'server { \
     listen 80; \
-    server_name localhost; \
+    server_name _; \
     root /usr/share/nginx/html; \
     index index.html; \
     \
