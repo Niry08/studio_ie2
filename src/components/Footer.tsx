@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center md:items-end gap-4">
             <div className="flex gap-4" aria-label="Réseaux sociaux">
               <a 
-                href="https://www.instagram.com/lakerun_biel/" 
+                href="https://www.instagram.com/studio_ie2" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Instagram"
