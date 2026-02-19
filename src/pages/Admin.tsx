@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/lib/database";
 import { Download, Lock, RefreshCw, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -82,19 +82,64 @@ const Admin = () => {
   const fetchRegistrations = async () => {
     setIsLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke('get-registrations', {
-        headers: {
-          'x-admin-password': PASSWORD_DB
-        }
-      });
+      // Récupérer toutes les inscriptions de tous les événements
+      const [clashData, echecsData, courseData] = await Promise.all([
+        api.clashRoyale.getAll().catch(() => []),
+        api.echecs.getAll().catch(() => []),
+        api.course.getAll().catch(() => []),
+      ]);
 
-      if (error) throw error;
+      // Formatter les données pour correspondre à l'interface Registration
+      const formattedData: Registration[] = [
+        ...clashData.map((r: any) => ({
+          id: r.id.toString(),
+          created_at: r.created_at,
+          event_name: "Clash Royale",
+          first_name: r.prenom,
+          last_name: r.nom,
+          email: r.email,
+          phone: r.telephone || "",
+          clash_royal_tag: r.player_tag,
+          clash_royal_username: r.classe,
+          elo_officiel: r.niveau,
+          elo: null,
+          has_internet_connection: null,
+          mobile_operator: null,
+        })),
+        ...echecsData.map((r: any) => ({
+          id: r.id.toString(),
+          created_at: r.created_at,
+          event_name: "Échecs",
+          first_name: r.prenom,
+          last_name: r.nom,
+          email: r.email,
+          phone: r.telephone || "",
+          clash_royal_tag: null,
+          clash_royal_username: null,
+          elo_officiel: parseInt(r.niveau_echecs) || null,
+          elo: null,
+          has_internet_connection: null,
+          mobile_operator: null,
+        })),
+        ...courseData.map((r: any) => ({
+          id: r.id.toString(),
+          created_at: r.created_at,
+          event_name: "Course à Pied",
+          first_name: r.prenom,
+          last_name: r.nom,
+          email: r.email,
+          phone: r.telephone || "",
+          clash_royal_tag: null,
+          clash_royal_username: null,
+          elo_officiel: null,
+          elo: null,
+          has_internet_connection: null,
+          mobile_operator: null,
+        })),
+      ];
 
-      if (data?.success) {
-        setRegistrations(data.data || []);
-      } else {
-        throw new Error(data?.error || 'Erreur inconnue');
-      }
+      setRegistrations(formattedData);
+      toast.success(`${formattedData.length} inscriptions chargées`);
     } catch (error) {
       console.error('Error fetching registrations:', error);
       toast.error("Erreur lors du chargement des inscriptions");

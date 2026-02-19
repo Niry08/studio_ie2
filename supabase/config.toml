@@ -1,7 +1,0 @@
-project_id = "wsdwrgxwzufmxkgioqmw"
-
-[functions.submit-registration]
-verify_jwt = false
-
-[functions.get-registrations]
-verify_jwt = false

@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/lib/database";
 
 interface RegistrationFormProps {
   eventName: string;
@@ -34,33 +34,66 @@ const RegistrationForm = ({ eventName, showClashRoyalFields = false, showChessFi
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('submit-registration', {
-        body: {
-          eventName,
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+      // Déterminer quel endpoint utiliser selon l'événement
+      let result;
+      
+      if (showClashRoyalFields) {
+        // Inscription Clash Royale
+        result = await api.clashRoyale.create({
+          prenom: formData.firstName,
+          nom: formData.lastName,
           email: formData.email,
-          phone: formData.phone,
-          clashRoyalTag: formData.clashRoyalTag || null,
-          clashRoyalUsername: formData.clashRoyalUsername || null,
-          eloOfficiel: formData.eloOfficiel ? parseInt(formData.eloOfficiel) : null,
-          elo: formData.elo ? parseInt(formData.elo) : null,
-          hasInternetConnection: showClashRoyalFields ? formData.hasInternetConnection : null,
-          mobileOperator: formData.mobileOperator || null,
-        },
-      });
-
-      if (error) throw error;
+          telephone: formData.phone,
+          player_tag: formData.clashRoyalTag,
+          classe: formData.mobileOperator,
+          niveau: formData.elo ? parseInt(formData.elo) : null,
+        });
+      } else if (showChessFields) {
+        // Inscription Échecs
+        result = await api.echecs.create({
+          prenom: formData.firstName,
+          nom: formData.lastName,
+          email: formData.email,
+          telephone: formData.phone,
+          niveau_echecs: formData.eloOfficiel || formData.elo,
+          club_affiliation: null,
+        });
+      } else {
+        // Inscription Course (par défaut)
+        result = await api.course.create({
+          prenom: formData.firstName,
+          nom: formData.lastName,
+          email: formData.email,
+          telephone: formData.phone,
+          date_naissance: null,
+          sexe: null,
+          categorie_age: null,
+          taille_tshirt: null,
+          urgence_contact: null,
+          urgence_telephone: null,
+        });
+      }
 
       toast.success("Inscription réussie !", {
         description: `Vous êtes inscrit(e) pour ${eventName}. Nous vous contacterons bientôt par email.`,
       });
 
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", clashRoyalTag: "", clashRoyalUsername: "", eloOfficiel: "", elo: "", hasInternetConnection: false, mobileOperator: "" });
-    } catch (error) {
+      setFormData({ 
+        firstName: "", 
+        lastName: "", 
+        email: "", 
+        phone: "", 
+        clashRoyalTag: "", 
+        clashRoyalUsername: "", 
+        eloOfficiel: "", 
+        elo: "", 
+        hasInternetConnection: false, 
+        mobileOperator: "" 
+      });
+    } catch (error: any) {
       console.error('Registration error:', error);
       toast.error("Erreur lors de l'inscription", {
-        description: "Une erreur s'est produite. Veuillez réessayer.",
+        description: error.message || "Une erreur s'est produite. Veuillez réessayer.",
       });
     } finally {
       setIsSubmitting(false);
