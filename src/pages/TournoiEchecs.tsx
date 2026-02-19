@@ -44,57 +44,58 @@ const TournoiEchecs = () => {
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Lieu</p>
-                        <p className="text-muted-foreground">Court, BE</p>
+                        <p className="text-muted-foreground">Bâtiment communal - La Rue de la Valle 19, 2738 Court</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Users className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Participants</p>
-                        <p className="text-muted-foreground">32 places disponibles</p>
+                        <p className="text-muted-foreground">32 places - séprarées en 2 groupes (top 16 & bottom 16)</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Award className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Prix</p>
-                        <p className="text-muted-foreground">Produits locaux + bons cadeaux</p>
+                        <p className="text-muted-foreground">Produits locaux + bons cadeaux + cash prizes</p>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="shadow-card">
-                <CardContent className="pt-6">
-                  <h2 className="text-2xl font-bold mb-6">Format du tournoi</h2>
-                  <div className="space-y-4 text-muted-foreground">
-                    <div className="flex items-start gap-3">
-                      <Trophy className="w-5 h-5 text-secondary mt-1" />
-                      <div>
-                        <p className="font-semibold text-foreground">Phase de pool</p>
-                        <p>BO1 - 10min</p>
+              {/* Tournament Format */}
+              <div>
+                <Card>
+                  <CardContent className="pt-4 space-y-6">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">Format du tournoi</h2>
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-sm font-bold text-primary">1</span>
+                        </div>
+                        <h3 className="font-bold text-lg">Ronde Suisse</h3>
+                      </div>
+                      <p className="text-muted-foreground ml-11">
+                        3 victoires te qualifie, 3 défaites t'élimine.
+                      </p>
+                    </div>
 
-                        <p className="font-semibold text-foreground">Phase éliminative</p>
-                        <p>BO3 - 15min</p>
+                    <div className="border-t pt-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-sm font-bold text-primary">2</span>
+                        </div>
+                        <h3 className="font-bold text-lg">Phase éliminatoire</h3>
                       </div>
+                      <p className="text-muted-foreground ml-11 mb-3">
+                        Arbre à élimination directe pour les 2x 8 meilleurs joueurs de chaque groupe.
+                      </p>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Target className="w-5 h-5 text-secondary mt-1" />
-                      <div>
-                        <p className="font-semibold text-foreground">Catégories</p>
-                        <p>top 16 & bottom 16</p>
-                      </div>
-                    </div>
-                    <div className="bg-muted/50 p-4 rounded-lg mt-4">
-                      <p className="font-semibold text-foreground mb-2">Informations pratiques</p>
-                      <ul className="list-disc list-inside space-y-1">
-                        <li>Inscription sur place possible (sous réserve)</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
 
             {/* Registration Form */}

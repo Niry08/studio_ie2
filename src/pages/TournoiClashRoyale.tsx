@@ -36,7 +36,7 @@ const TournoiClashRoyale = () => {
                       <Calendar className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <p className="font-semibold">Date</p>
-                        <p className="text-muted-foreground">Mai 2026</p>
+                        <p className="text-muted-foreground">01.05.2026, durant l'après-midi</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">

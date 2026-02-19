@@ -15,13 +15,13 @@ const Index = () => {
         {/* Image de fond avec overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 via-60% to-background z-10"></div>
-          <img 
-            src="/3_images.png" 
-            alt="Studio-ie² Team" 
+          <img
+            src="images/3_images.png"
+            alt="Studio-ie² Team"
             className="w-full h-full object-cover object-center"
           />
         </div>
-        
+
         {/* Contenu */}
         <div className="container mx-auto mt-28 text-center relative z-20 w-full">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
@@ -52,8 +52,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <EventCard
               title="Tournoi Clash Royale"
-              description="Affrontez les meilleurs joueurs dans un tournoi épique de Clash Royale du Ceff"
-              date="Vendredi avant les vacances de Pâques"
+              description="Affrontez les meilleurs joueurs dans un tournoi épique de Clash Royale du Ceff."
+              date="01.05.2026"
               location="Ceff Industrie"
               participants="128 places disponibles"
               link="/tournoi-clash-royale"
@@ -62,25 +62,25 @@ const Index = () => {
             />
             <EventCard
               title="Tournoi d'Échecs"
-              description="Démontrez votre stratégie dans notre tournoi d'échecs"
+              description="Démontrez votre stratégie dans notre tournoi d'échecs."
               date="Mois de mai"
-              location="-"
-              participants="2x32 places disponibles"
+              location="Bâtiment communal de Court"
+              participants="32 places disponibles"
               link="/tournoi-echecs"
               icon={<Crown className="w-6 h-6" />}
               img="/images/events/chess.jpeg"
             />
             <EventCard
               title="Course à Pied"
-              description="Course à pied de 6km dans un cadre exceptionnel"
+              description="Course à pied de 5km dans un cadre exceptionnel, au bord de l'Aar."
               date="09.05.2026"
               location="Nidau -> Aegerten"
               participants="Pas de limites de places"
               link="/course-a-pied"
               icon={<Award className="w-6 h-6" />}
-              img="/images/events/running.jpg"  
+              img="/images/events/running.jpg"
             />
-            </div>
+          </div>
         </div>
       </section>
 
@@ -93,14 +93,10 @@ const Index = () => {
               Projet TPI - Ceff Industrie St-Imier
             </p>
           </div>
-          
+
           <div className="flex flex-col gap-6">
             <div className="flex flex-col md:flex-row items-start gap-6 p-8 rounded-2xl bg-card border-l-4 border-primary shadow-sm">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                  <Goal className="w-8 h-8 text-primary-foreground" />
-                </div>
-              </div>
+                <Goal className="w-16 h-16 mt-2" />
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2">Notre Mission</h3>
                 <p className="text-muted-foreground text-base">
@@ -111,28 +107,24 @@ const Index = () => {
 
             <div className="flex flex-col md:flex-row items-start gap-6 p-8 rounded-2xl bg-card border-l-4 border-primary shadow-sm">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                  <Target className="w-8 h-8 text-primary-foreground" />
-                </div>
+                  <img src="favicon.ico" className="w-20 h-20 mt-2" />
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2">Studio-ie²</h3>
                 <p className="text-muted-foreground text-base">
-                  Notre entreprise d'événementiel tire son nom de nos initiales : <span className="font-semibold text-foreground">I</span>oan Charpilloz, <span className="font-semibold text-foreground">E</span>than Hofstetter et <span className="font-semibold text-foreground">E</span>than Bracelli.
+                  Notre entreprise d'événementiel tire son nom de nos initiales : <span className="font-semibold text-foreground">I</span>oan Charpilloz, <span className="font-semibold text-foreground">E</span>than Hofstetter et <span className="font-semibold text-foreground">E</span>than Bracelli, avec le mot studio en référence à notre espace de travail collaboratif.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-start gap-6 p-8 rounded-2xl bg-card border-l-4 border-primary shadow-sm">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                  <Users className="w-8 h-8 text-primary-foreground" />
-                </div>
+                  <Users className="w-12 h-12 mt-2" />
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2">Notre Équipe</h3>
                 <p className="text-muted-foreground text-base">
-                  Une équipe pluridisciplinaire composée de 2 informaticiens et 1 électronicien, tous en dernière année au Ceff Industrie de St-Imier.
+                  Une équipe pluridisciplinaire composée de 2 informaticiens et 1 électronicien. Nous sommes tous en dernière année au Ceff Industrie à St-Imier.
                 </p>
               </div>
             </div>
@@ -155,7 +147,7 @@ const Index = () => {
               { name: "Valgine", logo: "/sponsors_images/course/valgine.png", url: "https://guenat-sa-montres-valgine.digitalone.site/" },
               { name: "Nurissa", logo: "/sponsors_images/course/nurissa.svg", url: "https://www.nurissa.ch" },
               { name: "Focus Water", logo: "/sponsors_images/course/focus_water.png", url: "https://www.focus-water.com" },
-              { name: "Club d'Échecs Court", logo: "/sponsors_images/echecs/club_echecs_court.png", url: "#" },
+              { name: "Club d'Échecs Court", logo: "/sponsors_images/echecs/club_echecs_court.png", url: "https://cecourt.ch" },
               { name: "Croisitour", logo: "/sponsors_images/echecs/croisitour.png", url: "https://www.croisitour.ch" },
               { name: "Coop", logo: "/sponsors_images/course/coop.png", url: "https://www.coop.ch" },
               { name: "Commune d'Aegerten", logo: "/sponsors_images/course/commune_aegerten.png", url: "https://www.aegerten.ch" },
