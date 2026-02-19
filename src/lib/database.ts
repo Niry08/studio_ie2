@@ -2,8 +2,8 @@
 // Note: Direct database connection removed from frontend for security
 // All database operations now go through the API
 
-// API Base URL
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+// API Base URL - Use relative path to work with nginx proxy
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 // API client functions
 export const api = {

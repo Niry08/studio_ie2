@@ -5,6 +5,8 @@ services:
     image: postgres:16-alpine
     container_name: studio_ie2_postgres
     restart: unless-stopped
+    networks:
+      - studio_network
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-studio_ie2}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
@@ -22,9 +24,11 @@ services:
 
   # API Backend
   api:
-    image: votre-dockerhub/studio_ie2-api:latest  # Remplacer par votre image
+    image: niry08/studio_ie2-api:latest
     container_name: studio_ie2_api
     restart: unless-stopped
+    networks:
+      - studio_network
     depends_on:
       postgres:
         condition: service_healthy
@@ -36,9 +40,11 @@ services:
 
   # Production Frontend
   app:
-    image: votre-dockerhub/studio_ie2-app:latest  # Remplacer par votre image
+    image: niry08/studio_ie2-app:latest
     container_name: studio_ie2_app
     restart: unless-stopped
+    networks:
+      - studio_network
     depends_on:
       postgres:
         condition: service_healthy
@@ -50,3 +56,7 @@ services:
 volumes:
   postgres_data:
     driver: local
+
+networks:
+  studio_network:
+    driver: bridge
